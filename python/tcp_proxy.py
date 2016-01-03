@@ -137,9 +137,9 @@ def proxy_handler(client_socket, remote_host, remote_port, receive_first):
 
 def main():
 	# no fancy command-line parsing here
-	if len(sys.argv[1:] != 5):
+	if len(sys.argv[1:]) != 5:
 		print "Usage: ./tcp_proxy.py [localhost][localport][remoteport][receivefirst]"
-		pirnt "Example: ./tcp_proxy.py 127.0.0.1 9000 10.12.132.1 9000 True"
+		print "Example: ./tcp_proxy.py 127.0.0.1 9000 10.12.132.1 9000 True"
 		sys.exit(0)
 
 	# setup local listening parameters
