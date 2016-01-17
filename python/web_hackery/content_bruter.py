@@ -5,11 +5,11 @@ import urllib
 
 threads = 50
 target_url = "http://testphp.vulnweb.com"
-wordist_file = "/tmp/all.txt" # from SVNDigger
+wordlist_file = "/tmp/all.txt" # from SVNDigger
 resume = None
 user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:19.0) Gecko/20100101 Firefox/19.0"
 
-def built_wordlist(wordist_file):
+def build_wordlist(wordlist_file):
 	# read in the word list
 	fd = open(wordlist_file, "rb")
 	raw_words = fd.readlines()
@@ -71,7 +71,7 @@ def dir_bruter(word_queue, extensions=None):
 
 			pass
 
-word_queue = built_wordlist(wordlist_file)
+word_queue = build_wordlist(wordlist_file)
 extensions = [".php", ".bak". ".orig", ".inc"]
 
 for i in range(threads):
